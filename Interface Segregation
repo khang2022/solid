@@ -1,0 +1,68 @@
+"""The principle states that many client-specific interfaces are better than one general-purpose interface. 
+Clients should not be forced to implement a function they do no need."""
+
+
+class MobileDevice():
+     def voice(self):
+         raise NotImplementedError
+     def text(self):
+         raise NotImplementedError
+     def camera(self):
+         raise NotImplementedError
+     
+class ModestMobileDevice(MobileDevice):
+     def voice(self):
+         # implementation for voice
+     def text(self):
+         # implementation for text
+     def camera(self):
+         # implementation for camera
+         
+class oldestMobileDevice(MobileDevice):
+     def voice(self):
+         # implementation for voice
+     def text(self):
+         # implementation for text
+     def camera(self):
+         raise NotImplementedError
+     
+ 
+ 
+ 
+ 
+ 
+ 
+     
+
+
+
+from abc import ABC,abstractclassmethod
+
+class Phone(ABC):
+     @abstractmethod
+     def voice(self):
+         pass
+class Text(ABC):
+     @abcstracmethod
+     def text_message(self):
+         pass
+class Camera(ABC):
+     @abcstracmethod
+     def photo(self):
+         pass     
+
+class ModestMobileDevice(Phone,Text,Camera):
+     def voice(self):
+         # implementation for voice
+     def text(self):
+         # implementation for text
+     def camera(self):
+         # implementation for camera
+         
+class oldestMobileDevice(Phone,Text):
+     def voice(self):
+         # implementation for voice
+     def text(self):
+         # implementation for text
+       
+             
